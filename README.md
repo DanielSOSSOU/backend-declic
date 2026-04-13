@@ -5,6 +5,7 @@ Backend d'un projet d'application mobile.
 - Python 3.10+
 - Django 4.2 LTS
 - Django REST Framework
+- FastAPI
 - MySQL
 - drf-spectacular (documentation OpenAPI)
 - django-cors-headers
@@ -107,3 +108,24 @@ Note de compatibilite: le projet est volontairement cale sur Django 4.2 LTS pour
 - `GET /api/v1/health/`
 - `GET /api/schema/`
 - `GET /api/docs/`
+
+## FastAPI (documentation et tests directs)
+Une app FastAPI est disponible pour permettre aux developpeurs de visualiser et tester rapidement les endpoints.
+
+1. Lancer FastAPI en local:
+
+	```bash
+	uvicorn fastapi_app.main:app --reload --port 8001
+	```
+
+2. Ouvrir la documentation interactive:
+
+	- Swagger UI: http://127.0.0.1:8001/docs
+	- ReDoc: http://127.0.0.1:8001/redoc
+	- OpenAPI JSON: http://127.0.0.1:8001/openapi.json
+
+3. Lancer les tests FastAPI:
+
+	```bash
+	pytest tests/fastapi -q
+	```
